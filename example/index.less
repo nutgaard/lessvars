@@ -1,0 +1,29 @@
+//@base-url: ".";
+//@modig-frontend-images-root-url: "../META-INF/resources/img";
+
+@minVar1: blue;
+@minVar2: #f00;
+@minVar3: #f0ff00;
+@minVar4: rgb(124, 124, 124);
+@minVar5: rgba(124, 124, 124, 0.5);
+@minVar6: hsl(120, 100%, 50%);
+@minVar7: hsla(120, 100%, 50%, 0.75);
+@minVar8: #ffffff;
+
+@compondVar1: lighten(@minVar5, 20%);
+@compondVar2: darken(@minVar6, 20%);
+@compondVar3: mix(@minVar1, @minVar2, 50%);
+
+
+.test {
+  background-color: @minVar1;
+  background-color: @minVar2;
+  background-color: @minVar3;
+  background-color: @minVar4;
+  background-color: @minVar5;
+  background-color: @minVar6;
+  background-color: @minVar7;
+  background-color: @compondVar1;
+  background-color: @compondVar2;
+  background-color: @compondVar3;
+}
