@@ -8,6 +8,6 @@ lessvar(content, (err, variables) => {
     Object
         .keys(variables)
         .map((key) => ([key, variables[key]]))
-        .forEach(([key, value]) => console.log(key, value.toCSS({ compress: true })));
-});
+        .forEach(([key, value]) => console.log(key, value));
+}).then((o) => console.log(`o`, o));
 

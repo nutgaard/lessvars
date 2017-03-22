@@ -4,7 +4,7 @@
   "description": "Get variables from your less",
   "main": "index.js",
   "author": "Nicklas Utgaard",
-  "license": "X11",
+  "license": "MIT",
   "scripts": {
     "compile": "lessc example/index.less",
     "start": "node example/index.js"
@@ -15,8 +15,5 @@
     "babel-preset-stage-0": "^6.22.0",
     "babel-register": "^6.24.0",
     "less": "^2.7.2"
-  },
-  "dependencies": {
-    "color-convert": "^1.9.0"
   }
 }
