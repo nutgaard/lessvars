@@ -3,8 +3,8 @@
   "version": "0.0.4",
   "description": "Get variables from your less",
   "main": "index.es5.js",
-  "jsnext:main": "index.js",
-  "module": "index.js",
+  "jsnext:main": "index.es5.js",
+  "module": "index.es5.js",
   "author": "Nicklas Utgaard",
   "license": "X11",
   "scripts": {
