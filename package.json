@@ -1,7 +1,7 @@
 {
   "name": "lessvars",
   "version": "1.0.0",
-  "description": "Get variables from your less",
+  "description": "Parses LESS-files and extracts variables",
   "main": "index.es5.js",
   "jsnext:main": "index.es5.js",
   "module": "index.es5.js",
@@ -12,6 +12,10 @@
     "compile": "lessc example/index.less",
     "start": "cd example && node index.js",
     "build": "babel index.js --out-file index.es5.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nutgaard/lessvars"
   },
   "devDependencies": {
     "babel": "^6.23.0",
