@@ -12,6 +12,9 @@ The AST is then walked in order to find all variables, this includes variables d
 ### Example
 
 ````less
+// toBeImported.less
+@fromAnImport: blue;
+
 // index.less
 @import "tobeImported";
 
@@ -36,20 +39,7 @@ The AST is then walked in order to find all variables, this includes variables d
 
 .test {
   @includeThis: blue;
-  background-color: @minVar1;
-  background-color: @minVar2;
-  background-color: @minVar3;
-  background-color: @minVar4;
-  background-color: @minVar5;
-  background-color: @minVar6;
-  background-color: @minVar7;
-  background-color: @compondVar1;
-  background-color: @compondVar2;
-  background-color: @compondVar3;
 }
-
-// toBeImported.less
-@fromAnImport: blue;
 ````
 
 Example output: 
@@ -74,7 +64,7 @@ Example output:
 }
 ````
 
-**NOTE:** As seen by the example, it returns variables defined within rules. And resolved `darken`, `lighten` etc.  
+**NOTE:** As seen by the example, it returns variables defined in imported files, within rules and resolves `darken`, `lighten` etc.  
 
 
 ### Usage
@@ -90,17 +80,14 @@ function printObject(obj) {
         .forEach(([key, value]) => console.log(key, value));
 }
 
-console.log('Use with callback');
+// Use with callback
 lessvars(content, (err, variables) => {
     printObject(variables);
 });
 
+// Use with promise
 lessvars(content)
-    .then((variables) => {
-        console.log('');
-        console.log('Or, use with promises');
-        printObject(variables);
-    });
+    .then(printObject);
 ````
 
 
