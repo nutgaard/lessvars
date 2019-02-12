@@ -1,6 +1,6 @@
 {
   "name": "lessvars",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Parses LESS-files and extracts variables",
   "main": "index.es5.js",
   "jsnext:main": "index.es5.js",
