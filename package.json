@@ -10,7 +10,7 @@
   "scripts": {
     "prepublish": "npm run build",
     "compile": "lessc example/index.less",
-    "start": "node example/index.js",
+    "start": "cd example && node index.js",
     "build": "babel index.js --out-file index.es5.js"
   },
   "devDependencies": {

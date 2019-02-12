@@ -1,13 +1,22 @@
 require('babel-register');
 const fs = require('fs');
-const lessvar = require('./../index').default;
+const lessvars = require('./../index').default;
 
-const content = fs.readFileSync('./example/index.less', 'utf-8');
+const content = fs.readFileSync('./index.less', 'utf-8');
 
-lessvar(content, (err, variables) => {
-    Object
-        .keys(variables)
-        .map((key) => ([key, variables[key]]))
+function printObject(obj) {
+    Object.entries(obj)
         .forEach(([key, value]) => console.log(key, value));
-}).then((o) => console.log(`o`, o));
+}
 
+console.log('Use with callback');
+lessvars(content, (err, variables) => {
+    printObject(variables);
+});
+
+lessvars(content)
+    .then((variables) => {
+        console.log('');
+        console.log('Or, use with promises');
+        printObject(variables);
+    });
